@@ -9,6 +9,13 @@ public class PlayerController : MonoBehaviour
     public float speed = 5f;
     public float jumpForce = 10f;
 
+    AudioManager manager;
+
+    private void Awake()
+    {
+        manager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -40,6 +47,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
+            manager.playSFX(manager.jump);
             animator.SetTrigger("isJumping");
             rb.AddForce(new Vector2(0f, jumpForce));
         }

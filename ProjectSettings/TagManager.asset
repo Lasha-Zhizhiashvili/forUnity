@@ -6,6 +6,7 @@ TagManager:
   tags:
   - DeadlyBlock
   - Enemmy
+  - Audio
   layers:
   - Default
   - TransparentFX
