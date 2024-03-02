@@ -7,9 +7,11 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
     private Animator animator2;
     public float speed = 5f;
-    public float jumpForce = 10f;
+    public float jumpForce = 1000f;
 
     AudioManager manager;
+
+    private CameraFollow cameraFollow;
 
     private void Awake()
     {
@@ -19,12 +21,24 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        rb.freezeRotation = true;
         animator = transform.Find("Body").GetComponent<Animator>();
         animator2 = transform.Find("Wood_Club_0000").GetComponent<Animator>();
 
         if (animator == null)
         {
             Debug.LogError("Animator not found on the 'Body' object.");
+        }
+
+        cameraFollow = Camera.main.GetComponent<CameraFollow>();
+
+        if (cameraFollow == null)
+        {
+            Debug.LogError("CameraFollow script not found on the main camera.");
+        }
+        else
+        {
+            cameraFollow.target = transform;
         }
     }
 
