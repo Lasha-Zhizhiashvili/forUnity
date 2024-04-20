@@ -1,0 +1,7 @@
+You can delete:
+
+- '.manifest' files
+- '.meta' files
+- 'Bundles' files
+
+(aka for a bundle called 'level' you only need: level.scene')

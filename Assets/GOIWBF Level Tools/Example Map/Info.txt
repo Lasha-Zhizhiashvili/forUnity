@@ -1,0 +1,15 @@
+The map is in an empty called 'mapOrigin' to keep the map centered (This will fix player breaking after traveling big distances)
+
+To use the animation trigger you have to:
+- Set the animation file to legacy mode by:
+	- Clicking on the animation clip file
+	- In the inspector click on the top right corner and switch to Debug mode (https://i.imgur.com/XE5Fmq8.png)
+	- Turn on Legacy (https://i.imgur.com/wv1BwI8.png)
+- Setup animation component:
+	- If existing remove the Animator component from the animated GameObject
+	- If add the Animation *component* (not clip/file) to the animated GameObject
+- Drag and drop everything to the right place (https://i.imgur.com/aFbiHSq.png)
+	- Drag and drop the animation clip (file) to the Animation Component.
+	- Drag the *Animation Component* or *Animated GameObject* to the Animation box in the Custom Trigger
+
+All Screenshots: (https://imgur.com/a/2FeTYWg)
